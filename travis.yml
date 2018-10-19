@@ -1,11 +1,16 @@
 language: node_js
 node_js:
-  - 10
+  - 8
 cache:
   directories:
-    - ~/.npm
-    - ~/.cache
-install:
-  - npm ci
+    - node_modules
+
+before_script:
+  - yarn build
+  - yarn start --silent &
+  
 script:
+  # run unit tests:
+  - yarn tests
+  # run E2E tests:
   - $(npm bin)/cypress run --record
