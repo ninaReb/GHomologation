@@ -1,0 +1,39 @@
+{
+  "name": "GHomologation",
+  "version": "1.0.2",
+  "description": "This is an example app used to showcase Cypress.io testing. For a full reference of our documentation, go to docs.cypress.io",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/GHomologation/GHomologation.git"
+  },
+  "dependencies": {
+    "http-server": "0.11.1",
+    "npm-run-all": "^4.1.2"
+  },
+  "devDependencies": {
+    "@bahmutov/print-env": "1.1.0",
+    "@cypress/releaser": "0.2.2",
+    "colon-names": "1.0.0",
+    "cypress": "3.1.0",
+    "eslint": "5.3.0",
+    "eslint-plugin-cypress": "2.0.1",
+    "eslint-plugin-cypress-dev": "1.1.2",
+    "eslint-plugin-mocha": "5.2.0",
+    "husky": "1.1.2",
+    "start-server-and-test": "1.7.4",
+    "stop-build": "1.1.0",
+    "stop-only": "2.2.4",
+    "typescript": "2.9.2"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run warn-only",
+      "pre-push": "npm run stop-only"
+    }
+  }
+}
