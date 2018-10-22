@@ -4,11 +4,11 @@ class LoginPage {
     }
   
     getEmailError() {
-      //return cy.get(`[data-testid=SignInEmailError]`);
+      return cy.get('#emailErrorMessage');
     }
   
     getPasswordError() {
-      //return cy.get(`[data-testid=SignInPasswordError]`);
+      return cy.get('#passwordErrorMessage');
     }
   
     fillEmail(value) {
