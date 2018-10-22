@@ -1,0 +1,18 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: cypress/base:8
+        environment:
+          ## this enables colors in the output
+          TERM: xterm
+    working_directory: ~/app
+    steps:
+      - checkout
+      - run:
+          name: Install Dependencies
+          command: npm ci
+          paths:
+            - ~/.npm
+            - ~/.cache
+      - run: $(npm bin)/cypress run --record --key 30ea5392-97ae-4cc4-97d8-7e661cbe004d
