@@ -7,7 +7,7 @@ class HomePage {
   }
   
   visit() {
-    cy.visit('https://ccstore-stage-zb5a.oracleoutsourcing.com/home');
+    cy.visit('home');
   }
 
   getLogoutButton() {

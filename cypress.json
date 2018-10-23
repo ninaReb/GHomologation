@@ -1,3 +1,8 @@
 {
-  "projectId": "6ndde9"
+  "projectId": "6ndde9",
+  "baseUrl": "https://ccstore-stage-zb5a.oracleoutsourcing.com/",
+  "env": {
+    "pfUser": "automatedTestPF@mailinator.com",
+    "password": "Admin123"
+  }
 }

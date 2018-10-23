@@ -1,6 +1,6 @@
 class Header {
     getSignInLink() {
-        return cy.get('#btnLoginCadastrar');
+        return cy.get('#btnLoginCadastrar', {timeout: 10000});
     }
 
     getCartLink(){
