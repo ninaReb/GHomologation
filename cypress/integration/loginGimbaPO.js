@@ -3,20 +3,6 @@ import HomePage from '../integration/Pages/HomePage.js';
 describe('Gimba Login Test Page Object', () => {
   const email = Cypress.env('pfUser');
   const password = Cypress.env('password');
-  
-  it('should sign in with correct credentials', () => {
-    const home = new HomePage();
-    home.visit();
-    
-    const login = home.goToSignIn();
-    
-    login
-      .fillEmail(email)
-      .fillPassword(password)
-      .submit();
-
-    home.getLogoutButton().should('be.visible');
-  });
 
   it('should not sign in without email', () => {
     const home = new HomePage();
@@ -69,5 +55,19 @@ describe('Gimba Login Test Page Object', () => {
       .submit();
 
     home.getLogoutButton().should('not.be.visible');
+  });
+    
+  it('should sign in with correct credentials', () => {
+    const home = new HomePage();
+    home.visit();
+    
+    const login = home.goToSignIn();
+    
+    login
+      .fillEmail(email)
+      .fillPassword(password)
+      .submit();
+
+    home.getLogoutButton().should('be.visible');
   });
 });
