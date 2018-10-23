@@ -4,11 +4,11 @@ class LoginPage {
     }
   
     getEmailError() {
-      return cy.get('#emailErrorMessage');
+      return cy.get('#emailErrorMessage', {timeout: 10000});
     }
   
     getPasswordError() {
-      return cy.get('#passwordErrorMessage');
+      return cy.get('#passwordErrorMessage', {timeout: 10000});
     }
   
     fillEmail(value) {
