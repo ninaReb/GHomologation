@@ -7,5 +7,7 @@ cache:
     - ~/.cache
 install:
   - npm ci
+notifications:
+    slack: mcfadyenbrasil:kbMVbztMC74kPXp8zdSI8w1J
 script:
   - $(npm bin)/cypress run --record --key 92a66a43-e49f-4951-aa57-48c3682f5e79
