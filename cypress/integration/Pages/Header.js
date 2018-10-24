@@ -4,7 +4,7 @@ class Header {
     }
 
     getCartLink(){
-        return cy.get('.padding-0 > .btn');
+        return cy.get('.height-24');
     }
 
     getSearchBar(){

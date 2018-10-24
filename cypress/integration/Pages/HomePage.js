@@ -1,5 +1,6 @@
-import Header from '../Pages/Header.js';
-import LoginPage from '../Pages/LoginPage.js';
+import Header from './Header.js';
+import LoginPage from './LoginPage.js';
+import CartPage from './CartPage.js';
 
 class HomePage {
   constructor() {
@@ -15,11 +16,26 @@ class HomePage {
   }
   
   goToSignIn() {
-    const link = this.header.getSignInLink();
-    link.click();
+    const loginlink = this.header.getSignInLink();
+    loginlink.click();
 
     const login = new LoginPage();
     return login;
+  }
+
+  goToCart(){
+    const cartlink = this.header.getCartLink();
+    cartlink.click({ force: true });
+
+    const cart = new CartPage();
+    return cart;
+  }
+
+  goToCartUrl(){
+    cy.visit('cart');
+
+    const cart = new CartPage();
+    return cart
   }
 }
 
