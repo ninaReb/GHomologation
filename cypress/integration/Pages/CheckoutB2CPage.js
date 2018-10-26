@@ -15,12 +15,38 @@ class CheckoutB2CPage {
     selectBoletoType(){
         const ddl = cy.get('.form-group > .row > .col-sm-4 > .input-1');
         ddl.select('Boleto à vista');
+        
         return this;
     }
     clickEnviarPedido(){
         const enviar = cy.get('.padding-15 > .btn', {timeout: 10000});
         enviar.click();
         return new PedidoRealizadoPage();
+    }
+    clickCartaoOption(){
+        const radioButton = cy.get('#cartao', {timeout: 10000});
+        radioButton.click();
+        return this;
+    }
+    fillCartaoForm(){
+        const nome = cy.get('.input-1.js-card-name-validation');
+        nome.clear();        
+        nome.type('Automation Leonardo');
+        const numeroCartao = cy.get('#CC-checkoutPaymentDetails-cardNumber');
+        numeroCartao.clear();        
+        numeroCartao.type('41111111111111111111111111111');
+        const cvv = cy.get('.input-1.js-cvv-number-validation');
+        cvv.clear();
+        cvv.type('123');
+        const endMonth = cy.get('[name="endMonth"]');
+        endMonth.select('01');
+        const endYear = cy.get('[name="endYear"]');
+        endYear.select('2019');
+        const parcelasCartao = cy.get('[data-name="parcelasCartao"]');
+        parcelasCartao.select('1');
+        const opcaoCartao =  cy.get(':nth-child(1) > .font-weight-100 > .radiomark');
+        opcaoCartao.click();
+        return this;
     }
 }
   
