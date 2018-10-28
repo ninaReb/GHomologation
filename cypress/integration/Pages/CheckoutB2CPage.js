@@ -7,6 +7,10 @@ class CheckoutB2CPage {
         cy.wait(8000);
         return this;
     }
+    selectFrete(frete){
+        cy.get('.frete-calc', {timeout:15000}).eq(frete).click();
+        return this;
+    }
     clickBoletoOption(){
         const radioButton = cy.get('.padding-bottom-20 > .radio-container > .label-fix > .radiomark', {timeout: 10000});
         radioButton.click();
@@ -20,7 +24,7 @@ class CheckoutB2CPage {
     }
     clickEnviarPedido(){
         const enviar = cy.get('.padding-15 > .btn', {timeout: 10000});
-        enviar.click();
+        enviar.click({force : true});
         return new PedidoRealizadoPage();
     }
     clickCartaoOption(){
