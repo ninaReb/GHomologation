@@ -6,15 +6,15 @@ class HomePage {
   constructor() {
     this.header = new Header();
   }
-  
+
   visit() {
     cy.visit('home');
   }
 
   getLogoutButton() {
-    return cy.get('#btnLogout > .text-light-grey');
+    return cy.get('#btnLogout > .text-light-grey', { timeout: 150000 });
   }
-  
+
   goToSignIn() {
     const loginlink = this.header.getSignInLink();
     loginlink.click();
@@ -23,7 +23,7 @@ class HomePage {
     return login;
   }
 
-  goToCart(){
+  goToCart() {
     const cartlink = this.header.getCartLink();
     cartlink.click({ force: true });
 
@@ -31,11 +31,41 @@ class HomePage {
     return cart;
   }
 
-  goToCartUrl(){
+  goToCartUrl() {
     cy.visit('cart');
 
     const cart = new CartPage();
-    return cart
+    return cart;
+  }
+
+  getCarrousel() {
+    return cy.get('.carrossel-produto', { timeout: 150000 }).find('.carousel-inner', { timeout: 150000 });
+  }
+
+  getCarrouselItems() {
+    const carousel = this.getCarrousel();
+    const row = carousel.find('.item.active.row', { timeout: 150000 });
+    return row.find('.product-item');
+  }
+
+  getCarrouselItem(number) {
+    const items = this.getCarrouselItems();
+    // We can use .first() and .last()
+    return items.eq(number);
+  }
+
+  itemChangeQuantidade(item, quantity) {
+    const inputQuantity = this.getCarrouselItem(item).find('select');
+    inputQuantity.select(quantity);
+
+  }
+
+  itemAdd(item) {
+    this.getCarrouselItem(item).find('button').eq(1).click();
+  }
+
+  goToPDP(item) {
+    this.getCarrouselItem(item).find('[role="link"]').children().first().click();
   }
 }
 
