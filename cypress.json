@@ -7,7 +7,12 @@
   "env": {
     "pfUser": "automatedTestPF@mailinator.com",
     "pjUser": "pesquisa@sebastianaevalentinapadariame.com.br",
+    "vendor":"rerocha@gimba.com.br",
+    "vendorPassword":"rcr1202",
     "password": "Admin123",
+    "pfClient": "97423162361",
+    "pjClient": "08606505000106",
+    "pjContact": "Laine Marinho",
     "prodInStock": "10296549",
     "prodOutStock": "11199989"
 
