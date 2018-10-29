@@ -5,8 +5,8 @@
   "ignoreTestFiles":"../GHomologation/cypress/integration/Pages/*.js",
   "pageLoadTimeout":30000,
   "env": {
-    "pfUser": "automatedTestPF@mailinator.com",
-    "pjUser": "pesquisa@sebastianaevalentinapadariame.com.br",
+    "pfUser": "testeleoorcamento@mailinator.com",
+    "pjUser": "demosp6pj@mailinator.com",
     "password": "Admin123",
     "prodInStock": "10296549",
     "prodOutStock": "11199989",

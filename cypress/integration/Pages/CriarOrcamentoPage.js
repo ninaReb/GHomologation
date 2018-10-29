@@ -19,7 +19,7 @@ class CriarOrcamentoPage {
     }
     selectBoletoType(){
         const ddl = cy.get('[test-id="orcamento-boleto-select"]');
-        ddl.select('Boleto à vista');
+        ddl.select('Boleto à vista',{force:true});
         return this;
     }
     clickEnviarOrcamento(){
