@@ -5,8 +5,8 @@
   "ignoreTestFiles":"../GHomologation/cypress/integration/Pages/*.js",
   "pageLoadTimeout":30000,
   "env": {
-    "pfUser": "automatedTestPF@mailinator.com",
-    "pjUser": "pesquisa@sebastianaevalentinapadariame.com.br",
+    "pfUser": "testeleoorcamento@mailinator.com",
+    "pjUser": "demosp6pj@mailinator.com",
     "vendor":"rerocha@gimba.com.br",
     "vendorPassword":"rcr1202",
     "password": "Admin123",
