@@ -7,7 +7,12 @@
   "env": {
     "pfUser": "testeleoorcamento@mailinator.com",
     "pjUser": "demosp6pj@mailinator.com",
+    "vendor":"rerocha@gimba.com.br",
+    "vendorPassword":"rcr1202",
     "password": "Admin123",
+    "pfClient": "97423162361",
+    "pjClient": "08606505000106",
+    "pjContact": "Laine Marinho",
     "prodInStock": "10296549",
     "prodOutStock": "11199989",
     "prodInStock2": "11094044",
