@@ -24,7 +24,7 @@ class Header {
     addEnabledItem(item){       
         this.getEnabledInSearch().eq(item).parent().parent().find('input').type('2',{force:true});
         this.getSearchBar().focus();
-        this.getEnabledInSearch().eq(item).click();
+        this.getEnabledInSearch().eq(item).click({force:true});
     }
 
     getModal(){

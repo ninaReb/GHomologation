@@ -26,10 +26,17 @@ class Utils {
 
     const cart = home.goToCart();
     cart.emptyCart();
-    cy.wait(3000);
+    this.logOut();
+  }
+
+  logOut(){
     cy.clearLocalStorage();
     cy.clearCookies();
     sessionStorage.clear();
+  }
+
+  logIn(){
+    
   }
 
 }

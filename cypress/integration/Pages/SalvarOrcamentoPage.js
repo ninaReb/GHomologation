@@ -8,13 +8,13 @@ class SalvarOrcamentoPage {
     
     clickFirstAddress(){
         const address = cy.get('.col-sm-4 > .address-box', {timeout: 15000});
-        address.click();
+        address.click({force:true});
         cy.wait(5000);
         return this;
     }
     clickBoletoOption(){
         const radioButton = cy.get('.padding-bottom-20 > .radio-container > .label-fix', {timeout: 10000});
-        radioButton.click();
+        radioButton.click({force:true});
         return this;
     }
     selectBoletoType(){
@@ -24,7 +24,7 @@ class SalvarOrcamentoPage {
     }
     clickSalvarOrcamento(){
         const enviar = cy.get('.col-md-offset-3 > .btn');
-        enviar.click();
+        enviar.click({force:true});
         return new OrcamentoRealizadoPage();
     }
 }

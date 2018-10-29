@@ -10,15 +10,14 @@ describe('Gimba Criar Orcamento Test - Not finished', () => {
   const password = Cypress.env('password');
   const prodStock = Cypress.env('prodInStock');
   const prodStock2 = Cypress.env('prodInStock2');
+  const utils = new Utils();
+
   beforeEach(function () {
-    const utils = new Utils();
     utils.emptyCartPf();
   });
 
   afterEach(function(){
-    cy.clearLocalStorage();
-    cy.clearCookies();
-    sessionStorage.clear();
+    utils.logOut();
   });
 
   it('should send an Orcamento', () => {
@@ -53,7 +52,7 @@ describe('Gimba Criar Orcamento Test - Not finished', () => {
     cart.clickCriarOrcamentoLink();
     cy.get('.cart-item-container', {timeout:15000}).find('.spinner-div').should('not.be.visible');
     cy.wait(5000);
-    header.getModal().children().find('.modal-footer > button').click();
+    header.getModal().children().find('.modal-footer > button').click({force:true});
     cart.changeItemQuantity(0,'20');
        
     cy.wait(5000);

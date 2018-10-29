@@ -9,7 +9,7 @@ class OrcamentoRealizadoPage {
         return cy.get('.text-blue', {timeout: 10000});
     }
     gotoDetalhesOrcamento(){
-        this.getOrcamentoNumber.click();
+        this.getOrcamentoNumber.click({force:true});
         //return new DetalhesOrcamentoPage();
     }
     getConfirmationMessage(){

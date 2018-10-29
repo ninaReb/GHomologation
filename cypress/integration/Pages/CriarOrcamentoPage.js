@@ -8,7 +8,7 @@ class CriarOrcamentoPage {
     
     clickFirstAddress(){
         const address = cy.get('[test-id="orcamento-endereco-0"]');
-        address.click();
+        address.click({force:true});
         cy.wait(5000);
         return this;
     }
