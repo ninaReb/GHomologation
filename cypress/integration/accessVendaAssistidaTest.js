@@ -8,6 +8,12 @@ describe('Access Venda Assistida selecting a client from the wallet', () => {
   const pjClient = Cypress.env('pjClient');
   const pjContact = Cypress.env('pjContact');
   
+  afterEach(function() {
+    cy.clearLocalStorage();
+    cy.clearCookies();
+    sessionStorage.clear();
+  });
+
   it('should access Venda Assistida selecting a PJ client from the wallet', () => {
     const home = new HomePage();
     home.visit();
