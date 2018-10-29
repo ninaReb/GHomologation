@@ -7,41 +7,45 @@ class CriarOrcamentoPage {
     }
     
     clickFirstAddress(){
-        const address = cy.get('.col-sm-4 > .address-box');
+        const address = cy.get('[test-id="orcamento-endereco-0"]');
         address.click();
         cy.wait(5000);
         return this;
     }
     clickBoletoOption(){
-        const radioButton = cy.get('.padding-bottom-20 > .radio-container > .label-fix', {timeout: 10000});
-        radioButton.click();
+        const radioButton = cy.get('#boleto', {timeout: 10000});
+        radioButton.parent().click({force:true});
         return this;
     }
     selectBoletoType(){
-        const ddl = cy.get('#boletoCode > .panel-body > .form-group > .row > .col-md-6 > .input-1');
+        const ddl = cy.get('[test-id="orcamento-boleto-select"]');
         ddl.select('Boleto à vista');
         return this;
     }
     clickEnviarOrcamento(){
-        const enviar = cy.get('.col-md-6 > .btn-success');
-        enviar.click();
+        const enviar = cy.get('[test-id="orcamento-enviar"]');
+        enviar.click({force:true});
         return new OrcamentoRealizadoPage();
     }
-    fillConcorrente(){
-        const concorrente = cy.get(':nth-child(6) > .padding-5');
+    fillConcorrente(item){
+        const concorrente = cy.get('[test-id="orcamento-concorrente-'+ item +'"]');
         concorrente.clear();
-        concorrente.type('Automation');
+        concorrente.type('Automation', {force:true});
         return this;
     }
-    selectCanalDivulgado(){
-        const ddlCanal = cy.get('.padding-2');
-        ddlCanal.select('TV');
+    selectCanalDivulgado(item){
+        const ddlCanal = cy.get('[test-id="orcamento-canal-'+ item +'"]').find('select');
+        ddlCanal.select('TV',{force:true});
         return this;
     }
-    fillValorSugerido(valor){
-        const valorSugerido = cy.get(':nth-child(1) > :nth-child(5) > .padding-5', {timeout: 15000});
+    fillValorSugerido(item, valor){
+        const valorSugerido = cy.get('[test-id="orcamento-sugerido-'+ item +'"]', {timeout: 15000});
         valorSugerido.type(valor).blur();
         return this;
+    }
+
+    removeItem(item){
+        cy.get('[test-id="orcamento-remove'+ item +'"]', {timeout: 15000});
     }
 }
   

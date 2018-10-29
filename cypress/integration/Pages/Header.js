@@ -3,6 +3,10 @@ class Header {
         return cy.get('#btnLoginCadastrar', {timeout: 150000});
     }
 
+    getSignOut() {
+        return cy.get('#btnLogout');
+    }
+
     getCartLink(){
         return cy.get('.height-24');
     }
@@ -21,6 +25,10 @@ class Header {
         this.getEnabledInSearch().eq(item).parent().parent().find('input').type('2',{force:true});
         this.getSearchBar().focus();
         this.getEnabledInSearch().eq(item).click();
+    }
+
+    getModal(){
+        return cy.get('#modalWidget', {timeout:15000}).should('be.visible');
     }
   }
   

@@ -2,7 +2,7 @@ import HomePage from '../Pages/HomePage.js';
 import ProdutoPage from '../Pages/ProdutoPage.js';
 import Header from '../Pages/Header.js';
 import LoginPage from '../Pages/LoginPage.js';
-import CheckoutB2CPage from '../Pages/CheckoutB2CPage.js'
+import CheckoutB2CPage from '../Pages/CheckoutB2BPage.js';
 
 describe('Gimba Compra PF Test', () => {
   const email = Cypress.env('pjUser');
@@ -27,9 +27,9 @@ describe('Gimba Compra PF Test', () => {
     /*ADD Search Bar */
     const header = new Header();
     const search = header.getSearchBar();
-    search.type('garrafa');
+    search.type(prodStock);
     cy.wait(10000);
-    header.addEnabledItem(2);
+    header.addEnabledItem(0);
     cy.wait(5000);
 
     /*Go to Cart*/
