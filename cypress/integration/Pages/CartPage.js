@@ -21,8 +21,28 @@ class CartPage {
     }
 
     clickCheckoutLink(){
-        cy.get('.progress-div > :nth-child(3) > .btn', {timeout: 25000}).click();
+        cy.get('[data-bind="ccLink: \'login\', visible: !user().loggedIn(), click: function() { $data.openLoginPage() }"] > span', {timeout: 25000})
+            .click({force:true});
         return new CheckoutB2CPage();
+    }
+
+    removeItem(item){
+        if(item >= 0){
+            cy.get('.cart-info', {timeout:15000}).find('[role="button"]')
+                .eq(item)
+                .click();
+        } else {
+            let length = cy.get('.cart-info', {timeout:15000}).find('[role="button"]').its('length');
+            cy.get('.cart-info', {timeout:15000}).find('[role="button"]').should('be.enabled').eq(-1).click();
+        }
+    }
+
+    changeItemQuantity(item, quantity){
+        cy.get('.cart-info', {timeout:15000}).find('input').should('be.visible')
+            .eq(item)
+            .clear()
+            .type(quantity)
+            .type('{enter}');
     }
 
 }

@@ -6,6 +6,10 @@
   "pageLoadTimeout":30000,
   "env": {
     "pfUser": "automatedTestPF@mailinator.com",
-    "password": "Admin123"
+    "pjUser": "pesquisa@sebastianaevalentinapadariame.com.br",
+    "password": "Admin123",
+    "prodInStock": "10296549",
+    "prodOutStock": "11199989"
+
   }
 }
