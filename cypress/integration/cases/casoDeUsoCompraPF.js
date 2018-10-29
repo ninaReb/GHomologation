@@ -4,6 +4,7 @@ import Header from '../Pages/Header.js';
 import LoginPage from '../Pages/LoginPage.js';
 import CheckoutB2CPage from '../Pages/CheckoutB2CPage.js';
 
+
 describe('Gimba Compra PF Test', () => {
   const email = Cypress.env('pfUser');
   const password = Cypress.env('password');

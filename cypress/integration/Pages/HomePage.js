@@ -23,6 +23,10 @@ class HomePage {
     return login;
   }
 
+  getVendaAssistidaButton(){
+    return cy.get('.vendor-user-button', { timeout: 150000 });
+  }
+
   goToCart() {
     const cartlink = this.header.getCartLink();
     cartlink.click({ force: true });
