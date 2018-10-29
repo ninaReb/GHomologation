@@ -1,6 +1,6 @@
 {
   "projectId": "6ndde9",
-  "baseUrl": "https://ccstore-stage-zb5a.oracleoutsourcing.com/",
+  "baseUrl": "https://ccstore-test-zb5a.oracleoutsourcing.com/",
   "integrationFolder":"../GHomologation/cypress/integration",
   "ignoreTestFiles":"../GHomologation/cypress/integration/Pages/*.js",
   "pageLoadTimeout":30000,
@@ -14,7 +14,9 @@
     "pjClient": "08606505000106",
     "pjContact": "Laine Marinho",
     "prodInStock": "10296549",
-    "prodOutStock": "11199989"
+    "prodOutStock": "11199989",
+    "prodInStock2": "11094044",
+    "pfOrcamentoUser": "testeleoorcamento@mailinator.com"
 
   }
 }

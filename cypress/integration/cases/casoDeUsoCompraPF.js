@@ -2,7 +2,8 @@ import HomePage from '../Pages/HomePage.js';
 import ProdutoPage from '../Pages/ProdutoPage.js';
 import Header from '../Pages/Header.js';
 import LoginPage from '../Pages/LoginPage.js';
-import CheckoutB2CPage from '../Pages/CheckoutB2CPage.js'
+import CheckoutB2CPage from '../Pages/CheckoutB2CPage.js';
+
 
 describe('Gimba Compra PF Test', () => {
   const email = Cypress.env('pfUser');

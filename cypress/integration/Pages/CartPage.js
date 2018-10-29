@@ -9,8 +9,8 @@ class CartPage {
     }
 
     clickCriarOrcamentoLink(){
-        //cy.get('.margin-top-30 > .pull-right', {timeout: 25000}).click();
-        cy.visit('criar-orcamento');
+        cy.get('[test-id="cart-criar-orcamento"]', {timeout: 25000}).click();
+        // cy.visit('criar-orcamento');
         return new CriarOrcamentoPage();
     }
 
@@ -41,8 +41,12 @@ class CartPage {
         cy.get('.cart-info', {timeout:15000}).find('input').should('be.visible')
             .eq(item)
             .clear()
-            .type(quantity)
-            .type('{enter}');
+            .type(quantity + '{enter}')
+            .trigger('change');
+        // return 
+    }
+    emptyCart(){
+        cy.get('.cart-item-container',{timeout:15000}).find('span').contains('Limpar Carrinho', {timeout:2000}).click({force:true});
     }
 
 }

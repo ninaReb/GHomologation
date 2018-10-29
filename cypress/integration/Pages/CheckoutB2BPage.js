@@ -52,6 +52,9 @@ class CheckoutB2CPage {
         opcaoCartao.click();
         return this;
     }
+    clickContribuicao(){
+        
+    }
 }
   
 export default CheckoutB2CPage;
