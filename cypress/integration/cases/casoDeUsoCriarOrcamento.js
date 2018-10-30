@@ -13,7 +13,7 @@ describe('Gimba Criar Orcamento Test - Not finished', () => {
     const utils = new Utils();
 
     beforeEach(function () {
-        utils.emptyCartPf();
+        utils.emptyCartPf('pfUser');
     });
 
     afterEach(function () {

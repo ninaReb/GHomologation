@@ -13,7 +13,7 @@ describe('Gimba Compra PF Test', () => {
   const utils = new Utils();
 
   beforeEach(function () {
-      utils.emptyCartPf();
+      utils.emptyCartPf('pfUser');
   });
 
   afterEach(function () {
@@ -45,7 +45,7 @@ describe('Gimba Compra PF Test', () => {
 
     /*Go to Cart*/
     const cart = home.goToCart();
-    cart.removeItem(0);
+    //cart.removeItem(0);
     cart.header.getSearchBar().clear().type(prodStock);
     cy.wait(10000);
     cart.header.addEnabledItem(0);

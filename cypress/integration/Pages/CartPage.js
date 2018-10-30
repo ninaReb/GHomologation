@@ -15,14 +15,14 @@ class CartPage {
     }
 
     clickSalvarOrcamentoLink(){
-        //cy.get('[data-bind="ccLink: 'salvar-orcamento', widgetLocaleText: 'label_salvarOrcamento'"]', {timeout: 25000}).click({force:true});
-        cy.visit('salvar-orcamento');
+        //cy.get('[test-id="cart-salvar-orcamento"]', {timeout: 25000}).click({force:true});
+        cy.contains('Salvar Orçamento', {timeout: 25000}).click({force:true});
+        //cy.visit('salvar-orcamento');
         return new SalvarOrcamentoPage();
     }
 
     clickCheckoutLink(){
-        cy.get('[data-bind="ccLink: \'login\', visible: !user().loggedIn(), click: function() { $data.openLoginPage() }"] > span', {timeout: 25000})
-            .click({force:true});
+        cy.get('.f').contains('Continuar').click({force:true});
         return new CheckoutB2CPage();
     }
 
@@ -40,7 +40,7 @@ class CartPage {
     changeItemQuantity(item, quantity){
         cy.get('.cart-info', {timeout:15000}).find('input').should('be.visible')
             .eq(item)
-            .clear()
+            .clear({force:true})
             .type(quantity + '{enter}')
             .trigger('change');
         // return 

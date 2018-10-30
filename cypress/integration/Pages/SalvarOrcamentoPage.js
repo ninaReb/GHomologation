@@ -7,25 +7,28 @@ class SalvarOrcamentoPage {
     }
     
     clickFirstAddress(){
-        const address = cy.get('.col-sm-4 > .address-box', {timeout: 15000});
+        const address = cy.get('[test-id="orcamento-endereco-0"]');
         address.click({force:true});
         cy.wait(5000);
         return this;
     }
     clickBoletoOption(){
-        const radioButton = cy.get('.padding-bottom-20 > .radio-container > .label-fix', {timeout: 10000});
-        radioButton.click({force:true});
+        const radioButton = cy.get('#boleto', {timeout: 10000});
+        radioButton.parent().click({force:true}).trigger('change',{force:true});
         return this;
     }
     selectBoletoType(){
-        const ddl = cy.get('#boletoCode > .panel-body > .form-group > .row > .col-md-6 > .input-1');
-        ddl.select('Boleto à vista');
+        const ddl = cy.get('[test-id="orcamento-boleto-select"]');
+        ddl.select('Boleto à vista',{force:true}).trigger('change',{force:true});
         return this;
     }
     clickSalvarOrcamento(){
-        const enviar = cy.get('.col-md-offset-3 > .btn');
+        const enviar = cy.get(':nth-child(7) > :nth-child(2) > .btn');
         enviar.click({force:true});
         return new OrcamentoRealizadoPage();
+    }
+    removeItem(item){
+        cy.get('[test-id="orcamento-remove'+ item +'"]', {timeout: 15000});
     }
 }
   

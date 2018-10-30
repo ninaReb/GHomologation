@@ -7,8 +7,11 @@ const prod = Cypress.env('prodInStock');
 
 class Utils {
   
-  emptyCartPf() {
-  
+  emptyCartPf(clearUser) {
+    const user = Cypress.env(clearUser);
+    const password = Cypress.env('password');
+    const prod = Cypress.env('prodInStock');
+
     const home = new HomePage();
     home.visit();
     const login = home.goToSignIn();

@@ -12,7 +12,7 @@ describe('Gimba Compra PF Test', () => {
   const utils = new Utils;
 
   beforeEach(function () {
-      utils.emptyCartPJ();
+      utils.emptyCartPJ('pjUser');
   });
 
   afterEach(function () {
