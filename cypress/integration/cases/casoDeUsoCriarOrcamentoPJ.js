@@ -1,19 +1,17 @@
 import HomePage from '../Pages/HomePage.js';
 import Header from '../Pages/Header';
-import LoginPage from '../Pages/LoginPage.js';
-import OrcamentoRealizadoPage from '../Pages/OrcamentoRealizadoPage.js';
 import CriarOrcamentoPage from '../Pages/CriarOrcamentoPage.js';
 import Utils from '../utils/utils';
 
 describe('Gimba Criar Orcamento Test - Not finished', () => {
-    const email = Cypress.env('pfUser');
+    const email = Cypress.env('pjUser');
     const password = Cypress.env('password');
     const prodStock = Cypress.env('prodInStock');
     const prodStock2 = Cypress.env('prodInStock2');
     const utils = new Utils();
 
     beforeEach(function () {
-        utils.emptyCartPf();
+        utils.emptyCartPj();
     });
 
     afterEach(function () {
