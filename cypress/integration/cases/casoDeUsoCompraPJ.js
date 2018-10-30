@@ -12,7 +12,7 @@ describe('Gimba Compra PF Test', () => {
   const utils = new Utils;
 
   beforeEach(function () {
-      utils.emptyCartPJ();
+      utils.emptyCartPj();
   });
 
   afterEach(function () {
@@ -38,9 +38,9 @@ describe('Gimba Compra PF Test', () => {
     cy.wait(5000);
     home.getLogoutButton().click({force:true});
     utils.logOut();
-    
+
     const search = home.header.getSearchBar();
-    search.type(prodStock);
+    search.type('garrafa');
     cy.wait(10000);
     home.header.addEnabledItem(0);
     cy.wait(5000);
