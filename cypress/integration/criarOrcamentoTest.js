@@ -9,7 +9,7 @@ describe('Gimba Criar Orcamento Test - Smoke test', () => {
 
   beforeEach(function () {
     const utils = new Utils();
-    utils.emptyCartPf('pfUser');
+    utils.emptyCartPf();
   });
 
   afterEach(function(){
@@ -41,7 +41,7 @@ describe('Gimba Criar Orcamento Test - Smoke test', () => {
     cart.changeItemQuantity(0, '20');
     cy.wait(5000);
     const CriarOrcamento = cart.clickCriarOrcamentoLink(); 
-    cy.wait(10000);
+    cy.wait(15000);
     const orcamentoRealizado = CriarOrcamento
       .fillValorSugerido(0, '26,00')
       .fillConcorrente(0)

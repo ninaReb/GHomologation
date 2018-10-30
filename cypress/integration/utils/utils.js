@@ -7,11 +7,7 @@ const prod = Cypress.env('prodInStock');
 
 class Utils {
   
-  emptyCartPf(clearUser) {
-    const user = Cypress.env(clearUser);
-    const password = Cypress.env('password');
-    const prod = Cypress.env('prodInStock');
-
+  emptyCartPf() {
     const home = new HomePage();
     home.visit();
     const login = home.goToSignIn();
@@ -62,6 +58,7 @@ class Utils {
     cy.clearLocalStorage();
     cy.clearCookies();
     sessionStorage.clear();
+    cy.wait(1000);
   }
 
   logIn(){

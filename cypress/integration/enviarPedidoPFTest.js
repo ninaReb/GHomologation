@@ -8,7 +8,7 @@ describe('Gimba Enviar Pedido PF Test', () => {
 
   beforeEach(function () {
     const utils = new Utils();
-    utils.emptyCartPf('pfUser');
+    utils.emptyCartPf();
   });
 
   afterEach(function(){

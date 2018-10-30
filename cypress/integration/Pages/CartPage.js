@@ -42,7 +42,7 @@ class CartPage {
             .eq(item)
             .clear({force:true})
             .type(quantity + '{enter}')
-            .trigger('change');
+            .trigger('change',{force:true});
         // return 
     }
     emptyCart(){

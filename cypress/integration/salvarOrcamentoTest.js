@@ -9,7 +9,7 @@ describe('Gimba Salvar Orcamento Test - Not finished', () => {
 
   beforeEach(function () {
     const utils = new Utils();
-    utils.emptyCartPf('pfUser');
+    utils.emptyCartPf();
   });
 
   afterEach(function(){
