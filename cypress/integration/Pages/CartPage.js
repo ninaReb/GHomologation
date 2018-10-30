@@ -9,13 +9,13 @@ class CartPage {
     }
 
     clickCriarOrcamentoLink(){
-        cy.get('[test-id="cart-criar-orcamento"]', {timeout: 25000}).click();
+        cy.get('[test-id="cart-criar-orcamento"]', {timeout: 25000}).click({force:true});
         // cy.visit('criar-orcamento');
         return new CriarOrcamentoPage();
     }
 
     clickSalvarOrcamentoLink(){
-        //cy.get('[data-bind="ccLink: 'salvar-orcamento', widgetLocaleText: 'label_salvarOrcamento'"]', {timeout: 25000}).click();
+        //cy.get('[data-bind="ccLink: 'salvar-orcamento', widgetLocaleText: 'label_salvarOrcamento'"]', {timeout: 25000}).click({force:true});
         cy.visit('salvar-orcamento');
         return new SalvarOrcamentoPage();
     }
@@ -30,10 +30,10 @@ class CartPage {
         if(item >= 0){
             cy.get('.cart-info', {timeout:15000}).find('[role="button"]')
                 .eq(item)
-                .click();
+                .click({force:true});
         } else {
             let length = cy.get('.cart-info', {timeout:15000}).find('[role="button"]').its('length');
-            cy.get('.cart-info', {timeout:15000}).find('[role="button"]').should('be.enabled').eq(-1).click();
+            cy.get('.cart-info', {timeout:15000}).find('[role="button"]').should('be.enabled').eq(-1).click({force:true});
         }
     }
 

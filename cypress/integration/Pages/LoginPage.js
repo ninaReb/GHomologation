@@ -29,7 +29,7 @@ class LoginPage {
     
     submit() {
       const button = cy.get('#btnLogin', {timeout: 15000});
-      button.click();
+      button.click({force:true});
     }
   }
   

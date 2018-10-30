@@ -3,17 +3,17 @@ import PedidoRealizadoPage from './PedidoRealizadoPage.js';
 class CheckoutB2CPage {
     clickFirstAddress(){
         const firstAddress = cy.get('.address-box', {timeout: 15000});
-        firstAddress.click();
+        firstAddress.click({force:true});
         cy.wait(8000);
         return this;
     }
     selectFrete(frete){
-        cy.get('.frete-calc', {timeout:15000}).eq(frete).click();
+        cy.get('.frete-calc', {timeout:15000}).eq(frete).click({force:true});
         return this;
     }
     clickBoletoOption(){
         const radioButton = cy.get('.padding-bottom-20 > .radio-container > .label-fix > .radiomark', {timeout: 10000});
-        radioButton.click();
+        radioButton.click({force:true});
         return this;
     }
     selectBoletoType(){
@@ -29,7 +29,7 @@ class CheckoutB2CPage {
     }
     clickCartaoOption(){
         const radioButton = cy.get('#cartao', {timeout: 10000});
-        radioButton.click();
+        radioButton.click({force:true});
         return this;
     }
     fillCartaoForm(){
@@ -49,7 +49,7 @@ class CheckoutB2CPage {
         const parcelasCartao = cy.get('[data-name="parcelasCartao"]');
         parcelasCartao.select('1');
         const opcaoCartao =  cy.get(':nth-child(1) > .font-weight-100 > .radiomark');
-        opcaoCartao.click();
+        opcaoCartao.click({force:true});
         return this;
     }
     clickContribuicao(){

@@ -3,12 +3,22 @@ import ProdutoPage from '../Pages/ProdutoPage.js';
 import Header from '../Pages/Header.js';
 import LoginPage from '../Pages/LoginPage.js';
 import CheckoutB2CPage from '../Pages/CheckoutB2CPage.js';
+import Utils from '../utils/utils.js';
 
 
 describe('Gimba Compra PF Test', () => {
   const email = Cypress.env('pfUser');
   const password = Cypress.env('password');
   const prodStock = Cypress.env('prodInStock');
+  const utils = new Utils();
+
+  beforeEach(function () {
+      utils.emptyCartPf();
+  });
+
+  afterEach(function () {
+      utils.logOut();
+  });
   it('should send an Order using products from site navigation', () => {
     const home = new HomePage();
     home.visit();
