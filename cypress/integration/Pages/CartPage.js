@@ -13,6 +13,11 @@ class CartPage {
         // cy.visit('criar-orcamento');
         return new CriarOrcamentoPage();
     }
+    clickCriarOrcamentoLinkBh(){
+        cy.get('[test-id="cart-criar-orcamento-bh"]', {timeout: 25000}).click({force:true});
+        // cy.visit('criar-orcamento');
+        return new CriarOrcamentoPage();
+    }
 
     clickSalvarOrcamentoLink(){
         //cy.get('[data-bind="ccLink: 'salvar-orcamento', widgetLocaleText: 'label_salvarOrcamento'"]', {timeout: 25000}).click({force:true});
@@ -41,8 +46,8 @@ class CartPage {
         cy.get('.cart-info', {timeout:15000}).find('input').should('be.visible')
             .eq(item)
             .clear()
-            .type(quantity + '{enter}')
-            .trigger('change');
+            .type(quantity + '{enter}',{force:true})
+            .trigger('change',{force:true});
         // return 
     }
     emptyCart(){

@@ -22,7 +22,7 @@ class Header {
         return cy.get('.search-product-item').find('.cart-block > button').should('be.enabled');
     }
     addEnabledItem(item){       
-        this.getEnabledInSearch().eq(item).parent().parent().find('input').type('2',{force:true});
+        this.getEnabledInSearch().eq(item).parent().parent().find('input').type('1',{force:true});
         this.getSearchBar().focus();
         this.getEnabledInSearch().eq(item).click({force:true});
     }
