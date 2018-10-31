@@ -87,7 +87,7 @@ describe('Gimba Criar Orcamento Test - Not finished', () => {
             .clickBoletoOption()
             .selectBoletoType()
             .clickEnviarOrcamento();
-        const status = cy.get('[test-id="orcamento-status"]', {timeout:15000}).contains('Em Andamento');
+        const status = cy.get('[test-id="orcamento-status"]', {timeout:15000}).contains('Em andamento');
         // orcamentoRealizado.getConfirmationMessage().should('be.visible');
     });
 });
