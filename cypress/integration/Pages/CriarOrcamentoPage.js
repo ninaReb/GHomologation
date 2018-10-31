@@ -44,13 +44,20 @@ class CriarOrcamentoPage {
     fillValorSugerido(item, valor){      
         cy.wait(10000);
         const valorSugerido = cy.get('[test-id="orcamento-sugerido-'+ item +'"]', {timeout: 15000});  
-        valorSugerido.type(valor,{force:true}).trigger('change',{force:true});        
+        valorSugerido.clear().type(valor,{force:true}).trigger('change',{force:true});        
         cy.wait(3000);
         return this;
     }
 
     removeItem(item){
         cy.get('[test-id="orcamento-remove'+ item +'"]', {timeout: 15000});
+    }
+
+    getErrorFaixaDesconto(){
+        this.header.getModal().children().find('.modal-footer > button').click({
+            force: true
+        });
+        return this;
     }
 }
   

@@ -32,7 +32,7 @@ class DashboardPage {
     }
 
     gotoVendaAssistida(){
-        cy.get(':nth-child(1) > a > .js-menu-item',{timeout: 150000}).click({force:true});
+        cy.get('[test-id="dashboard-comprar"]',{timeout: 150000}).click({force:true});
         return this;
     }
 
