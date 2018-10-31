@@ -13,7 +13,7 @@ class OrcamentoRealizadoPage {
         //return new DetalhesOrcamentoPage();
     }
     getConfirmationMessage(){
-        return cy.get('.validate-text', {timeout: 10000});
+        return cy.get('.validate-text', {timeout: 20000});
     }
 
 }

@@ -10,4 +10,4 @@ install:
 notifications:
     slack: mcfadyenbrasil:kbMVbztMC74kPXp8zdSI8w1J
 script:
-  - $(npm bin)/cypress run --record --key 92a66a43-e49f-4951-aa57-48c3682f5e79
+  - $(npm bin)/cypress run --browser chrome --record --key 92a66a43-e49f-4951-aa57-48c3682f5e79
