@@ -9,9 +9,9 @@ import DashboardPage from '../Pages/DashboardPage.js';
 describe('Gimba Criar Orcamento Test - Not finished', () => {
     const email = Cypress.env('vendor');
     const password = Cypress.env('vendorPassword');
-    const pfClient = Cypress.env('pfClient');
+    const pjClient = Cypress.env('14470793000117');
     // const pjClient = Cypress.env('pjClient');
-    // const pjContact = Cypress.env('pjContact');
+    const pjContact = Cypress.env('pjContatoVIP');
     const prodStock = Cypress.env('prodInStock');
     const prodStock2 = Cypress.env('prodInStock2');
     const utils = new Utils();
@@ -21,11 +21,11 @@ describe('Gimba Criar Orcamento Test - Not finished', () => {
     });   
     
     afterEach(function () {
-        // utils.emptyCartAssistido();
+        utils.emptyCartAssistido();
         utils.logOut();
     });
 
-    it('should send an Orcamento Assistido validating Faixas de Desconto for non VIP client', () => {
+    it('should send an Orcamento', () => {
         
         const home = new HomePage();
         home.visit();
@@ -43,7 +43,7 @@ describe('Gimba Criar Orcamento Test - Not finished', () => {
         const myClients = dashboard.gotoMyClients();
         cy.wait(15000);
         myClients
-            .searchAndSelectPFClient(pfClient);
+      .searchAndSelectPJClient(pjClient,pjContact);
 
         cy.wait(10000);
         dashboard.gotoVendaAssistida();
@@ -83,13 +83,12 @@ describe('Gimba Criar Orcamento Test - Not finished', () => {
 
         CriarOrcamento
             .fillValorSugerido(0, '0,99')
-            .getErrorFaixaDesconto()
-            .fillValorSugerido(0, '39,99')
             .fillConcorrente(0)
             .clickFirstAddress()
             .clickBoletoOption()
             .selectBoletoType()
             .clickEnviarOrcamento();
-        const status = cy.get('[test-id="orcamento-status"]', {timeout:150000}).contains('Realizado');
+        const status = cy.get('[test-id="orcamento-status"]', {timeout:15000}).contains('Em Andamento');
+        // orcamentoRealizado.getConfirmationMessage().should('be.visible');
     });
 });

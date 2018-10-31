@@ -19,7 +19,7 @@ class Utils {
     home.header.getSearchBar()
       .clear()
       .type(prod);
-    cy.wait(3000);
+    cy.wait(10000);
     home.header.addEnabledItem(0);
     cy.wait(3000);
 

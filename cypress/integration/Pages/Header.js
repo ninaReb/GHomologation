@@ -16,10 +16,10 @@ class Header {
     }
 
     getSearchResults(){
-        return cy.get('.search-product-item');
+        return cy.get('.search-product-item',{timeout: 150000});
     }
     getEnabledInSearch(){
-        return cy.get('.search-product-item').find('.cart-block > button').should('be.enabled');
+        return cy.get('.search-product-item',{timeout: 150000}).find('.cart-block > button').should('be.enabled');
     }
     addEnabledItem(item){       
         this.getEnabledInSearch().eq(item).parent().parent().find('input').type('1',{force:true});

@@ -57,6 +57,7 @@ class CriarOrcamentoPage {
         this.header.getModal().children().find('.modal-footer > button').click({
             force: true
         });
+        cy.pause();
         return this;
     }
 }
