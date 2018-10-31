@@ -9,11 +9,10 @@ import DashboardPage from '../Pages/DashboardPage.js';
 describe('Gimba Criar Orcamento Test - Not finished', () => {
     const email = Cypress.env('vendor');
     const password = Cypress.env('vendorPassword');
-    const pjClient = Cypress.env('14470793000117');
+    const pjClient = Cypress.env('pjClientVIP');
     // const pjClient = Cypress.env('pjClient');
     const pjContact = Cypress.env('pjContatoVIP');
     const prodStock = Cypress.env('prodInStock');
-    const prodStock2 = Cypress.env('prodInStock2');
     const utils = new Utils();
 
     beforeEach(function () {
