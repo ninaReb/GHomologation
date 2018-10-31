@@ -1,23 +1,23 @@
 class AprovarOrcamentoPage {
 
     getPorcentagem(item) {
-        return cy.get('[test-id="orcamento-porcentagem-"' + item + ']');
+        return cy.get('[test-id="orcamento-porcentagem-' + item + '"]', {timeout:15000});
     }
 
     getValor(item) {
-        return cy.get('[test-id="orcamento-valor-"' + item + ']');
+        return cy.get('[test-id="orcamento-valor-' + item + '"]', {timeout:15000});
     }
 
     getFaixa() {
-        return cy.get('[test-id="orcamento-faixa-supervisor"]');
+        return cy.get('[test-id="orcamento-faixa-supervisor"]', {timeout:15000});
     }
 
     getNotaVendedor() {
-        return cy.get('[test-id="orcamento-nota-vendedor"]');
+        return cy.get('[test-id="orcamento-nota-vendedor"]', {timeout:15000});
     }
 
     getNota() {
-        return cy.get('[test-id="orcamento-nota-cliente"]');
+        return cy.get('[test-id="orcamento-nota-cliente"]', {timeout:15000});
     }
     
     aceitar() {

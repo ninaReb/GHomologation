@@ -1,10 +1,12 @@
 import HomePage from '../Pages/HomePage.js';
 import Header from '../Pages/Header';
+import CartPage from '../Pages/CartPage.js';
 const userPj = Cypress.env('pjUser');
 const userPf = Cypress.env('pfUser');
 const password = Cypress.env('password');
 const prod = Cypress.env('prodInStock');
 const home = new HomePage();
+const cart = new CartPage();
 
 class Utils {
 
@@ -64,8 +66,10 @@ class Utils {
     home.header.addEnabledItem(0);
     cy.wait(3000);
 
-    const cart = home.goToCart();
-    cy.wait(10000);
+    if (!document.location.pathname.includes('cart')) {
+      home.goToCart();
+      cy.wait(10000);
+    }
     cart.emptyCart();
     cy.wait(10000);
   }

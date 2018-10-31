@@ -60,6 +60,11 @@ class DashboardPage {
         cy.get('#\'btn-magnifier\'').click({force:true});
         return this;
     }
+
+    goOrcamentosAprovacao(){
+        cy.get('[test-id="dashboard-orcamento-aprovacao"]',{timeout:10000}).click();
+        return this;
+    }
   }
   
   export default DashboardPage;

@@ -46,8 +46,12 @@ describe('Gimba Criar Orcamento Test - Not finished', () => {
 
         cy.wait(10000);
         dashboard.gotoVendaAssistida();
-        home.getVendaAssistidaButton().should('be.visible');
-        utils.emptyCartAssistido();
+        home.getVendaAssistidaButton().should('be.visible');       
+
+        const cart = home.goToCart();
+        cy.wait(10000);
+        utils.emptyCartAssistido(); 
+
         /*ADD Search Bar */
         const header = new Header();
         header.getSearchBar()
@@ -55,15 +59,7 @@ describe('Gimba Criar Orcamento Test - Not finished', () => {
             .type(prodStock);
         cy.wait(10000);
         header.addEnabledItem(0);
-      
-        // header.getSearchBar()
-        //     .clear()
-        //     .type(prodStock2);
-        // cy.wait(10000);
-        // header.addEnabledItem(0);
 
-        const cart = home.goToCart();
-        cy.wait(10000);
         cart.clickCriarOrcamentoLinkBh();
         cy.get('.cart-item-container', {
             timeout: 15000
@@ -79,7 +75,6 @@ describe('Gimba Criar Orcamento Test - Not finished', () => {
 
         const CriarOrcamento = new CriarOrcamentoPage();
 
-
         CriarOrcamento
             .fillValorSugerido(0, '0,99')
             .fillConcorrente(0)
@@ -88,6 +83,5 @@ describe('Gimba Criar Orcamento Test - Not finished', () => {
             .selectBoletoType()
             .clickEnviarOrcamento();
         const status = cy.get('[test-id="orcamento-status"]', {timeout:15000}).contains('Em andamento');
-        // orcamentoRealizado.getConfirmationMessage().should('be.visible');
     });
 });
