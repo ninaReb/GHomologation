@@ -20,7 +20,7 @@ describe('Gimba Criar Orcamento Test - Not finished', () => {
     });   
     
     afterEach(function () {
-        utils.emptyCartAssistido();
+        // utils.emptyCartAssistido();
         utils.logOut();
     });
 
