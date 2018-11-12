@@ -32,6 +32,11 @@ class AprovarOrcamentoPage {
         cy.get('[test-id="orcamento-rejeitar"]').click();
     }
 
+    avaliar(id) {
+        //const row = cy.get('.row').contains(id);
+        cy.get('[test-id="listar-orcamento-avaliar"]').first().click({force:true});
+    }
+
 }
 
 export default AprovarOrcamentoPage;
