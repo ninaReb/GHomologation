@@ -12,7 +12,7 @@ class LoginPage {
     }
   
     fillEmail(value) {
-      const field = cy.get('#email', {timeout: 15000});
+      const field = cy.get('[test-id="email"]', {timeout: 15000});
       field.clear();
       field.type(value);
       
@@ -29,7 +29,7 @@ class LoginPage {
     
     submit() {
       const button = cy.get('#btnLogin', {timeout: 15000});
-      button.click();
+      button.click({force:true});
     }
   }
   

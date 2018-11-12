@@ -2,34 +2,47 @@ import HomePage from '../Pages/HomePage.js';
 import ProdutoPage from '../Pages/ProdutoPage.js';
 import Header from '../Pages/Header.js';
 import LoginPage from '../Pages/LoginPage.js';
-import CheckoutB2CPage from '../Pages/CheckoutB2CPage.js'
+import CheckoutB2CPage from '../Pages/CheckoutB2BPage.js';
+import Utils from '../utils/utils.js';
 
-describe('Gimba Compra PF Test', () => {
+describe('Gimba Compra PJ Test', () => {
   const email = Cypress.env('pjUser');
   const password = Cypress.env('password');
   const prodStock = Cypress.env('prodInStock');
+  const utils = new Utils;
+
+  beforeEach(function () {
+      utils.emptyCartPj();
+  });
+
+  afterEach(function () {
+      utils.logOut();
+  });
   it('should send an Order using products from site navigation', () => {
     const home = new HomePage();
     home.visit();
 
     /*ADD HOME*/
-    home.itemChangeQuantidade(0, '8');
-    home.itemAdd(0);
+    //home.itemChangeQuantidade(0, '8');
+    //home.itemAdd(0);
 
 
     /*ADD PDP */
-    home.goToPDP(1);
-    const pdp = new ProdutoPage();
-    pdp.changeQuantidade('2');
-    cy.wait(5000);
-    pdp.hitComprar();
+    //home.goToPDP(1);
+    //const pdp = new ProdutoPage();
+    //pdp.changeQuantidade('2');
+    //cy.wait(5000);
+    //pdp.hitComprar();
 
     /*ADD Search Bar */
-    const header = new Header();
-    const search = header.getSearchBar();
+    cy.wait(5000);
+    home.getLogoutButton().click({force:true});
+    utils.logOut();
+
+    const search = home.header.getSearchBar();
     search.type('garrafa');
     cy.wait(10000);
-    header.addEnabledItem(2);
+    home.header.addEnabledItem(0);
     cy.wait(5000);
 
     /*Go to Cart*/
@@ -44,7 +57,7 @@ describe('Gimba Compra PF Test', () => {
     // cy.wait(5000);
     cart.changeItemQuantity(0, '1');
     // cart.removeItem(2);
-    cart.clickCheckoutLink();
+    cart.clickCheckoutLinkUnlogged();
 
     /*Login Page*/
     const login = new LoginPage();

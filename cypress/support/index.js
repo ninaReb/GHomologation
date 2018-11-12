@@ -14,7 +14,10 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
-import './commands'
-
+import './commands';
+import Utils from '../integration/utils/utils';
+describe('Hooks', function () {
+    
+});
 // Alternatively you can use CommonJS syntax:
 // require('./commands')

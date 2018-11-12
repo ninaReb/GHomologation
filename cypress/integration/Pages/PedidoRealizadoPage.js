@@ -12,7 +12,7 @@ class PedidoRealizadoPage {
         return cy.get('.color-3', {timeout: 10000});
     }
     gotoDetalhesPedido(){
-        this.getPedidoNumber.click();
+        this.getPedidoNumber.click({force:true});
         //return new DetalhesPedidoPage();
     }
     getConfirmationMessage(){
