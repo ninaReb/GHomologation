@@ -58,7 +58,7 @@ describe('Gimba Compra PF Test', () => {
     // cy.wait(5000);
     cart.changeItemQuantity(0, '1');
     // cart.removeItem(2);
-    cart.clickCheckoutLink();
+    cart.clickCheckoutLinkUnlogged();
 
     /*Login Page*/
     const login = new LoginPage();

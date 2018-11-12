@@ -16,7 +16,7 @@ describe('Gimba Criar Orcamento Test - Not finished', () => {
     const utils = new Utils();
 
     beforeEach(function () {
-
+        cy.viewport(1920, 1200)
     });   
     
     afterEach(function () {

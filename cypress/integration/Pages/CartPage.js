@@ -31,6 +31,10 @@ class CartPage {
         return new CheckoutB2CPage();
     }
 
+    clickCheckoutLinkUnlogged(){
+        cy.get('[data-bind="ccLink: \'login\', visible: !user().loggedIn(), click: function() { $data.openLoginPage() }"] > span').click({force:true});
+    }
+
     removeItem(item){
         if(item >= 0){
             cy.get('.cart-info', {timeout:15000}).find('[role="button"]')

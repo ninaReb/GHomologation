@@ -17,7 +17,7 @@ describe('Gimba Criar Orcamento Test - Not finished', () => {
     const utils = new Utils();
 
     beforeEach(function () {
-
+        cy.viewport(1920, 1200)
     });   
     
     afterEach(function () {
@@ -84,7 +84,7 @@ describe('Gimba Criar Orcamento Test - Not finished', () => {
         CriarOrcamento
             .fillValorSugerido(0, '0,99')
             .getErrorFaixaDesconto()
-            .fillValorSugerido(0, '39,99')
+            .fillValorSugerido(0, '99,99')
             .fillConcorrente(0)
             .clickFirstAddress()
             .clickBoletoOption()

@@ -5,7 +5,7 @@ import LoginPage from '../Pages/LoginPage.js';
 import CheckoutB2CPage from '../Pages/CheckoutB2BPage.js';
 import Utils from '../utils/utils.js';
 
-describe('Gimba Compra PF Test', () => {
+describe('Gimba Compra PJ Test', () => {
   const email = Cypress.env('pjUser');
   const password = Cypress.env('password');
   const prodStock = Cypress.env('prodInStock');
@@ -57,7 +57,7 @@ describe('Gimba Compra PF Test', () => {
     // cy.wait(5000);
     cart.changeItemQuantity(0, '1');
     // cart.removeItem(2);
-    cart.clickCheckoutLink();
+    cart.clickCheckoutLinkUnlogged();
 
     /*Login Page*/
     const login = new LoginPage();

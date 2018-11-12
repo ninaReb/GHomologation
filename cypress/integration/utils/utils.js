@@ -9,7 +9,7 @@ const home = new HomePage();
 class Utils {
 
   emptyCartPf() {
-
+    cy.viewport(1920, 1200)
     home.visit();
     const login = home.goToSignIn();
     login
@@ -32,6 +32,7 @@ class Utils {
   }
 
   emptyCartPj() {
+    cy.viewport(1920, 1200)
     const home = new HomePage();
     home.visit();
     const login = home.goToSignIn();
