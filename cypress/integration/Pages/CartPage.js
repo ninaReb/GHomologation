@@ -47,7 +47,7 @@ class CartPage {
     }
 
     changeItemQuantity(item, quantity){
-        cy.get('.cart-info', {timeout:15000}).find('input').should('be.visible')
+        cy.get('.cart-info', {timeout:20000}).find('input').should('be.visible')
             .eq(item)
             .clear({force:true})
             .type(quantity + '{enter}',{force:true})
@@ -55,7 +55,7 @@ class CartPage {
         // return 
     }
     emptyCart(){
-        cy.get('.cart-item-container',{timeout:15000}).find('span').contains('Limpar Carrinho', {timeout:2000}).click({force:true});
+        cy.get('.cart-item-container',{timeout:20000}).find('span').contains('Limpar Carrinho', {timeout:2000}).click({force:true});
     }
 
 }

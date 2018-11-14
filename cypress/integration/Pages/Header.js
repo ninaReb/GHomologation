@@ -4,11 +4,11 @@ class Header {
     }
 
     getSignOut() {
-        return cy.get('#btnLogout');
+        return cy.get('#btnLogout', {timeout: 150000});
     }
 
     getCartLink(){
-        return cy.get('.height-24');
+        return cy.get('[data-bind="visible: !vendedor() && comprar()"] > .btn');
     }
 
     getSearchBar(){

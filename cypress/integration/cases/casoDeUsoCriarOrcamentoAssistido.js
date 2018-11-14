@@ -6,7 +6,7 @@ import CriarOrcamentoPage from '../Pages/CriarOrcamentoPage.js';
 import Utils from '../utils/utils';
 import DashboardPage from '../Pages/DashboardPage.js';
 
-describe('Gimba Criar Orcamento Test - Not finished', () => {
+describe('Caso de Uso Criar Orçamento Assistido', () => {
     const email = Cypress.env('vendor');
     const password = Cypress.env('vendorPassword');
     const pfClient = Cypress.env('pfClient');
@@ -14,6 +14,7 @@ describe('Gimba Criar Orcamento Test - Not finished', () => {
     // const pjContact = Cypress.env('pjContact');
     const prodStock = Cypress.env('prodInStock');
     const prodStock2 = Cypress.env('prodInStock2');
+    const valorSugerido = Cypress.env('valorSugerido');
     const utils = new Utils();
 
     beforeEach(function () {
@@ -84,7 +85,7 @@ describe('Gimba Criar Orcamento Test - Not finished', () => {
         CriarOrcamento
             .fillValorSugerido(0, '0,99')
             .getErrorFaixaDesconto()
-            .fillValorSugerido(0, '99,99')
+            .fillValorSugerido(0, valorSugerido)
             .fillConcorrente(0)
             .clickFirstAddress()
             .clickBoletoOption()

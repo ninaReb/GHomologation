@@ -2,7 +2,7 @@ import HomePage from '../integration/Pages/HomePage.js';
 import OrcamentoRealizadoPage from '../integration/Pages/OrcamentoRealizadoPage.js';
 import Utils from './utils/utils';
 
-describe('Gimba Salvar Orcamento Test - Not finished', () => {
+describe('Gimba Salvar Orcamento Test', () => {
   const email = Cypress.env('pfUser');
   const password = Cypress.env('password');
   const prodStock = Cypress.env('prodInStock');
