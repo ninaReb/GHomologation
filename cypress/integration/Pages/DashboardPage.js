@@ -63,7 +63,7 @@ class DashboardPage {
     }
 
     gotoAprovarOrcamento() {
-        cy.get('[test-id="dashboard-orcamento-aprovacao"]',{timeout: 150000}).click({force:true});
+        cy.get('[test-id="dashboard-orcamento-aprovacao"]',{timeout: 150000}).click();
         return new AprovarOrcamentoPage();
     }
   }

@@ -11,8 +11,8 @@ class HomePage {
     cy.visit('home');
   }
 
-  getLogoutButton() {
-    return cy.get('#btnLogout > .text-light-grey', { timeout: 150000 });
+  getLogoutButton(){
+    return this.header.getSignOut();
   }
 
   goToSignIn() {
