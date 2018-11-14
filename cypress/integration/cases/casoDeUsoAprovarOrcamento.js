@@ -3,7 +3,7 @@ import Utils from '../utils/utils';
 import DashboardPage from '../Pages/DashboardPage.js';
 import AprovarOrcamentoPage from '../Pages/AprovarOrcamentoPage.js';
 
-describe('Gimba Criar Orcamento Test - Not finished', () => {
+describe('Caso de Uso Aprovar Orçamento', () => {
     const email = Cypress.env('administrator');
     const password = Cypress.env('administratorPassword');
     const utils = new Utils();

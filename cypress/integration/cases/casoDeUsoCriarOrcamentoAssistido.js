@@ -6,7 +6,7 @@ import CriarOrcamentoPage from '../Pages/CriarOrcamentoPage.js';
 import Utils from '../utils/utils';
 import DashboardPage from '../Pages/DashboardPage.js';
 
-describe('Gimba Criar Orcamento Test - Not finished', () => {
+describe('Caso de Uso Criar Orçamento Assistido', () => {
     const email = Cypress.env('vendor');
     const password = Cypress.env('vendorPassword');
     const pfClient = Cypress.env('pfClient');

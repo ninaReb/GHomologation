@@ -3,7 +3,7 @@ import Header from '../Pages/Header';
 import CriarOrcamentoPage from '../Pages/CriarOrcamentoPage.js';
 import Utils from '../utils/utils';
 
-describe('Gimba Criar Orcamento Test - Not finished', () => {
+describe('Caso de Uso Criar Orçamento PJ', () => {
     const email = Cypress.env('pjUser');
     const password = Cypress.env('password');
     const prodStock = Cypress.env('prodInStock');

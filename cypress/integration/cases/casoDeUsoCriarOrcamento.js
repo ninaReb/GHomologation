@@ -5,7 +5,7 @@ import OrcamentoRealizadoPage from '../Pages/OrcamentoRealizadoPage.js';
 import CriarOrcamentoPage from '../Pages/CriarOrcamentoPage.js';
 import Utils from '../utils/utils';
 
-describe('Gimba Criar Orcamento Test - Not finished', () => {
+describe('Caso de Uso Criar Orçamento', () => {
     const email = Cypress.env('pfUser');
     const password = Cypress.env('password');
     const prodStock = Cypress.env('prodInStock');
