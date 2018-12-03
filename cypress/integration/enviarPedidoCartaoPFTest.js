@@ -47,6 +47,7 @@ describe('Gimba Enviar Pedido PF Test', () => {
       .selectFrete(0)
       .clickCartaoOption()
       .fillCartaoForm()
+      .getConfirmationMessage()
       .clickEnviarPedido();
     pedidoRealizado.getConfirmationMessage().should('be.visible');
 

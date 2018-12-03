@@ -3,6 +3,10 @@ class Header {
         return cy.get('#btnLoginCadastrar', {timeout: 150000});
     }
 
+    getRegisterLink(){
+        return cy.get('[test-id="cadastrar-2"]', {timeout: 150000});
+    }
+
     getSignOut() {
         return cy.get('#btnLogout', {timeout: 150000});
     }

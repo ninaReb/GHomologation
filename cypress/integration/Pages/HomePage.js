@@ -1,6 +1,9 @@
 import Header from './Header.js';
 import LoginPage from './LoginPage.js';
 import CartPage from './CartPage.js';
+import RegisterPjPage from './RegisterPjPage.js';
+import MyProfilePage from './MyProfilePage.js';
+import RegisterAddressPage from './RegisterAddressPage.js';
 
 class HomePage {
   constructor() {
@@ -21,6 +24,24 @@ class HomePage {
 
     const login = new LoginPage();
     return login;
+  }
+
+  goToProfile(){
+    cy.visit('profile');
+
+    const profile = new MyProfilePage();
+    return profile;
+
+    // const registeraddress = new RegisterAddressPage();
+    // return registeraddress;
+  }
+
+  goToRegister(){
+    const registerlink = this.header.getRegisterLink();
+    registerlink.click({force:true});
+
+    const register = new RegisterPjPage();
+    return register;
   }
 
   getVendaAssistidaButton(){
